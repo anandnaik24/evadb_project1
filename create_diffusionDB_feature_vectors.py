@@ -17,4 +17,4 @@ cursor.query("CREATE TABLE diffusiondb_prompt (image_name TEXT(100), prompt TEXT
 cursor.query("LOAD CSV 'output_every_100th_row.csv' INTO diffusiondb_prompt").df()
 
 # Create the diffusiondb_prompt_features table to store the feature vectors of the prompts in diffusiondb_prompt table
-cursor.query("CREATE TABLE IF NOT EXISTS diffusiondb_prompt_features AS SELECT F2(prompt), prompt FROM diffusiondb_prompt").df()
+cursor.query("CREATE TABLE IF NOT EXISTS diffusiondb_prompt_features AS SELECT FeatureVectorFunction(prompt), prompt FROM diffusiondb_prompt").df()
