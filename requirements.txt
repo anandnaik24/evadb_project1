@@ -1,0 +1,6 @@
+evadb
+pandas
+numpy
+urllib
+tensorflow
+tensorflow_hub
