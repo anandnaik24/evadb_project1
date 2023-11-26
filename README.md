@@ -18,4 +18,4 @@ The feature_vector_function.py is an Abstract Function which takes in a datafram
 
 Step 4: Comparing the input prompts with prompts in DiffusionDB - `get_similar_prompts.py`
 
-Use input.csv files to load the input prompt in EvaDB which is converted to a feature vector. The euclidean distance of this feature vector and the DiffusionDB feature vectors is then computed and the closest top 100 prompts are stored in the similar_prompts.csv. We can iteratively improve our prompt by borrowing features, vocabulary from the top 100 prompts.
+We can give our prompt as an input when requested. The euclidean distance of this feature vector and the DiffusionDB feature vectors is then computed and the closest top 20 prompts are stored in the similar_prompts.csv. We can iteratively improve our prompt by borrowing features, vocabulary from the top 20 prompts.

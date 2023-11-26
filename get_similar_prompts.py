@@ -16,7 +16,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 # Create the FeatureVectorFunction used to extract feature vector from a prompt
 cursor.query(
     f"""
-        CREATE FUNCTION IF NOT EXISTS SentenceFeature IMPL "{dir_path}/../../langcache/functions/sentence_feature.py"
+        CREATE FUNCTION IF NOT EXISTS SentenceFeature IMPL "{dir_path}/sentence_feature.py"
     """
 ).df()
 
@@ -37,7 +37,8 @@ cursor.query(
     """
 ).df()
 
-new_prompt = "black dog playing on mountain, 4k-photo"
+new_prompt = input("Enter your prompt: ")
+
 
 # Create the diffusiondb_prompt_features table to store the feature vectors of the prompts in diffusiondb_prompt table
 similar_prompts = cursor.query(
